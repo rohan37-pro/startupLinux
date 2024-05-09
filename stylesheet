@@ -1,0 +1,49 @@
+
+QFrame[framecontainer="true"] {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+
+
+QRadioButton {
+    background-color:       gray;
+    color:                  white;
+}
+
+QRadioButton::indicator {
+    width:                  10px;
+    height:                 10px;
+    border-radius:          7px;
+}
+
+QRadioButton::indicator:checked {
+    background-color:       red;
+    border:                 2px solid white;
+}
+
+QRadioButton::indicator:unchecked {
+    background-color:       black;
+    border:                 2px solid white;
+}
+
+
+
+QScrollBar {
+    background-color: rgb(251, 253, 255); 
+    border: none;
+    border-radius: 5px;
+    width: 10px;
+}
+QScrollBar::handle {
+    border: 1px solid rgb(29, 29, 29);
+    border-radius: 5px;
+    background-color:rgba(94, 94, 94, 0.697) ;
+}
+QScrollBar::handle::hover {
+    background-color:rgb(94, 94, 94) ;
+}
+QScrollBar::handle::pressed {
+    background-color:rgb(68, 67, 67) ;
+}
