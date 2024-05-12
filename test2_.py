@@ -1,7 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QScrollArea, QFrame, QCheckBox
 from PyQt5.QtWidgets import QRadioButton, QLabel, QSizePolicy, QGraphicsDropShadowEffect, QHBoxLayout
-from PyQt5.QtGui import QColor, QPaintEvent, QPainter, QBrush, QPen
+from PyQt5.QtGui import QColor, QPaintEvent, QPainter, QBrush, QPen, QPixmap
 from PyQt5.QtCore import   QPoint, Qt, QRect
 
 
@@ -12,7 +12,7 @@ class animeToggleButton(QCheckBox):
             width=60,
             bgcolor='#777',
             circle_color='#DDD',
-            active_color='#000BCFF',
+            active_color='#00d5ff',
     ):
         QCheckBox.__init__(self)
         self.setFixedSize(width, 28)
@@ -105,7 +105,14 @@ class Ui_MainWindow(object):
             self.app_cards[i]['toggleButton'].setProperty("toggleButt", True)
             self.app_cards[i]['toggleButton'].setStyleSheet(";")
             self.app_cards[i]['label'] = QLabel("TextLabel")
+            # self.app_cards[i]['label'].setProperty("app_icon", True)
+            self.app_cards[i]['label'].setFixedHeight(80)
+            self.app_cards[i]['label'].setFixedWidth(80)
             self.app_cards[i]['label_2'] = QLabel("hello there this is my area, don't interfere")
+            self.app_cards[i]['label_2'].setProperty("desktop_app_name", True)
+            self.app_cards[i]['label'].setPixmap(QPixmap("/home/rohan/Pictures/swarnali.png").scaled(self.app_cards[i]['label'].width(), self.app_cards[i]['label'].height()))
+
+
 
             layout = QHBoxLayout(self.app_cards[i]['frame']) 
         
@@ -132,6 +139,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle("MainWindow")
         for i in range(10):
             self.app_cards[i]['toggleButton'].setText("OFF")
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

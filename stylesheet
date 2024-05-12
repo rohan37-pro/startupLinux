@@ -1,34 +1,24 @@
 
+QWidget{
+    background-color: rgb(38, 38, 38);
+}
+
 QFrame[framecontainer="true"] {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(55, 55, 55);
     border: 1px solid #000000;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
-
-/* 
-QRadioButton {
-    background-color:       gray;
-    color:                  white;
+QLabel[desktop_app_name=true]{
+    color: rgb(255, 255, 255);
+    background-color: rgb(55, 55, 55);
+    font-weight: bold;
 }
 
-QRadioButton::indicator {
-    width:                  10px;
-    height:                 10px;
-    border-radius:          7px;
+QLabel[app_icon=true] {
+    height: 80;
+    width: 80;
 }
-
-QRadioButton::indicator:checked {
-    background-color:       red;
-    border:                 2px solid white;
-}
-
-QRadioButton::indicator:unchecked {
-    background-color:       black;
-    border:                 2px solid white;
-} */
-
-
 
 QScrollBar {
     background-color: rgb(251, 253, 255); 
