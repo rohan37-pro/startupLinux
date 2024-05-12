@@ -6,7 +6,7 @@ QFrame[framecontainer="true"] {
 }
 
 
-
+/* 
 QRadioButton {
     background-color:       gray;
     color:                  white;
@@ -26,7 +26,7 @@ QRadioButton::indicator:checked {
 QRadioButton::indicator:unchecked {
     background-color:       black;
     border:                 2px solid white;
-}
+} */
 
 
 

@@ -1,8 +1,64 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QScrollArea, QFrame
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QScrollArea, QFrame, QCheckBox
 from PyQt5.QtWidgets import QRadioButton, QLabel, QSizePolicy, QGraphicsDropShadowEffect, QHBoxLayout
-from PyQt5.QtGui import QColor, QPainter, QBrush, QPen
-from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QColor, QPaintEvent, QPainter, QBrush, QPen
+from PyQt5.QtCore import   QPoint, Qt, QRect
+
+
+
+class animeToggleButton(QCheckBox):
+    def __init__(
+            self,
+            width=60,
+            bgcolor='#777',
+            circle_color='#DDD',
+            active_color='#000BCFF',
+    ):
+        QCheckBox.__init__(self)
+        self.setFixedSize(width, 28)
+        self.setCursor(Qt.PointingHandCursor)
+        
+        self._bgcolor= bgcolor
+        self._circle_color = circle_color
+        self._active_color = active_color
+
+
+        self.stateChanged.connect(self.debug)
+
+   
+    def debug(self):
+        print(f"status : {self.isChecked()}")
+
+
+    def hitButton(self, pos: QPoint) :
+        return self.contentsRect().contains(pos)
+
+    def paintEvent(self, event):
+        paint = QPainter(self)
+        paint.setRenderHint(QPainter.Antialiasing)
+        paint.setPen(Qt.NoPen)
+
+        rect = QRect(0, 0, self.width(), self.height())
+
+        if not self.isChecked():
+            paint.setBrush(QColor(self._bgcolor))
+            paint.drawRoundedRect(0, 0, rect.width(), self.height(), self.height()/2, self.height()/2)
+            
+            # paint circle
+            paint.setBrush(QColor(self._circle_color))
+            paint.drawEllipse(3, 3, 22, 22)
+        else:
+            paint.setBrush(QColor(self._active_color))
+            paint.drawRoundedRect(0, 0, rect.width(), self.height(), self.height()/2, self.height()/2)
+            
+            # paint circle
+            paint.setBrush(QColor(self._circle_color))
+            paint.drawEllipse(self.width()-26, 3, 22, 22)
+
+
+        paint.end()
+
+    
 
 
 class Ui_MainWindow(object):
@@ -45,14 +101,14 @@ class Ui_MainWindow(object):
             self.app_cards[i]['frame'].setFrameShape(QFrame.StyledPanel)
 
 
-            self.app_cards[i]['radioButton'] = QRadioButton()
-            self.app_cards[i]['radioButton'].setProperty("radiobutt", True)
-            self.app_cards[i]['radioButton'].setStyleSheet(";")
+            self.app_cards[i]['toggleButton'] = animeToggleButton()
+            self.app_cards[i]['toggleButton'].setProperty("toggleButt", True)
+            self.app_cards[i]['toggleButton'].setStyleSheet(";")
             self.app_cards[i]['label'] = QLabel("TextLabel")
             self.app_cards[i]['label_2'] = QLabel("hello there this is my area, don't interfere")
 
             layout = QHBoxLayout(self.app_cards[i]['frame']) 
-            
+        
             layout.addStretch()
             layout.addWidget(self.app_cards[i]['label'])
             layout.addWidget(self.app_cards[i]['label_2'])
@@ -61,7 +117,7 @@ class Ui_MainWindow(object):
             layout.addStretch()
             layout.addStretch()
             layout.addStretch()
-            layout.addWidget(self.app_cards[i]['radioButton'])
+            layout.addWidget(self.app_cards[i]['toggleButton'])
             layout.addStretch()
 
 
@@ -75,7 +131,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle("MainWindow")
         for i in range(10):
-            self.app_cards[i]['radioButton'].setText("OFF")
+            self.app_cards[i]['toggleButton'].setText("OFF")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
