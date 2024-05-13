@@ -16,8 +16,8 @@ QLabel[desktop_app_name=true]{
 }
 
 QLabel[app_icon=true] {
-    height: 80;
-    width: 80;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 8px;
 }
 
 QScrollBar {

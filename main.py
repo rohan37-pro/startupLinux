@@ -104,13 +104,16 @@ class Ui_MainWindow(object):
             self.app_cards[i]['toggleButton'] = animeToggleButton()
             self.app_cards[i]['toggleButton'].setProperty("toggleButt", True)
             self.app_cards[i]['toggleButton'].setStyleSheet(";")
+
             self.app_cards[i]['label'] = QLabel("TextLabel")
-            # self.app_cards[i]['label'].setProperty("app_icon", True)
+            self.app_cards[i]['label'].setProperty("app_icon", True)
             self.app_cards[i]['label'].setFixedHeight(80)
             self.app_cards[i]['label'].setFixedWidth(80)
+            self.app_cards[i]['label'].setPixmap(QPixmap("/home/rohan/Pictures/swarnali.png").scaled(self.app_cards[i]['label'].width()-20, self.app_cards[i]['label'].height()-20))
+            self.app_cards[i]['label'].setAlignment(Qt.AlignCenter)
+            
             self.app_cards[i]['label_2'] = QLabel("hello there this is my area, don't interfere")
             self.app_cards[i]['label_2'].setProperty("desktop_app_name", True)
-            self.app_cards[i]['label'].setPixmap(QPixmap("/home/rohan/Pictures/swarnali.png").scaled(self.app_cards[i]['label'].width(), self.app_cards[i]['label'].height()))
 
 
 
