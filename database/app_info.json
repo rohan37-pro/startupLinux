@@ -1,1 +1,1116 @@
-{}
+{
+    "0": {
+        "Name": "Shotwell",
+        "GenericName": "Photo Manager",
+        "Exec": "shotwell %U",
+        "Icon": "shotwell",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "0ca781d5c814737016d4a0842c5a1a7ca2e31fe411ff54b7a0db58c134868d1d"
+    },
+    "1": {
+        "Name": "Mines",
+        "Exec": "gnome-mines",
+        "Icon": "org.gnome.Mines",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "005d79fd8d89b1903cad29deb665d3421c153c7e6b047204acf5171258cf24e4"
+    },
+    "2": {
+        "Name": "Device Security",
+        "Exec": "gnome-control-center firmware-security",
+        "Icon": "security-high-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "2ecfcf1845702407fce2bdbdc14abe0a3d3d16b1d9ccc1395248aa6b51114458"
+    },
+    "3": {
+        "Terminal": "false",
+        "Icon": "libreoffice-draw",
+        "Type": "Application",
+        "Exec": "libreoffice --draw %U",
+        "Name": "LibreOffice Draw",
+        "GenericName": "Drawing Program",
+        "hasha256": "18c36f2b62f049adb0389cef440edc81b6f09dd528be767c43497b786e6771cf"
+    },
+    "4": {
+        "Name": "Reactivate HP LaserJet 1018/1020 after reloading paper",
+        "Exec": "/usr/share/foo2zjs/hplj10xx_gui.tcl",
+        "Terminal": "false",
+        "Type": "Application",
+        "Icon": "/usr/share/pixmaps/hplj1020_icon.png",
+        "hasha256": "39583e4d5abccc7299d05b0b530970d616116f8bbc8804cd1891f3c97ce7d622"
+    },
+    "5": {
+        "Name": "Steam",
+        "Exec": "/usr/bin/steam %U",
+        "Icon": "steam",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "693e049e6c22e121f94db03cabe522fc09f4547321a08f65920bb0432b0ab897"
+    },
+    "6": {
+        "Name": "Rygel",
+        "GenericName": "UPnP/DLNA Services",
+        "Exec": "rygel",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "149b02ac31e10eba8cbbeac3fded93de2c7dc286503e8f2be102cd7c32d464d1"
+    },
+    "7": {
+        "Name": "Rhythmbox",
+        "GenericName": "Music Player",
+        "Exec": "rhythmbox %U",
+        "Terminal": "false",
+        "Type": "Application",
+        "Icon": "org.gnome.Rhythmbox3",
+        "hasha256": "8d81c4394b8f99343b470af9112a2f9f50e8919f0fd50b511c73e18fcdf002de"
+    },
+    "8": {
+        "Name": "Qt 5 Assistant",
+        "GenericName": "Document Browser",
+        "Icon": "assistant-qt5",
+        "Terminal": "false",
+        "Type": "Application",
+        "Exec": "/usr/lib/qt5/bin/assistant",
+        "hasha256": "1361c44f41338f7d6266f405d9aae7c5880ff45ed1a4f6c5c698d601a8b694df"
+    },
+    "9": {
+        "Name": "Software & Updates",
+        "GenericName": "Software & Updates",
+        "Exec": "software-properties-gtk",
+        "Icon": "software-properties",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "eab633d0a645b128428bc8a716e6b0725fe10aaad334107be2bca13445854fa3"
+    },
+    "10": {
+        "Name": "Disk Usage Analyzer",
+        "Exec": "baobab %U",
+        "Icon": "org.gnome.baobab",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "96493fbbe2d5b028305aad4c086a93a6d45fdd2ec6af3d7d628c6af090e5da78"
+    },
+    "11": {
+        "Name": "Cheese",
+        "GenericName": "Webcam Booth",
+        "Exec": "cheese",
+        "Terminal": "false",
+        "Type": "Application",
+        "Icon": "org.gnome.Cheese",
+        "hasha256": "9ffecf11f1a836979dd409f9049e9546f6545f58113007d58370820e417d8cb6"
+    },
+    "12": {
+        "Name": "Python (v3.11)",
+        "Exec": "/usr/bin/python3.11",
+        "Icon": "/usr/share/pixmaps/python3.11.xpm",
+        "Terminal": "true",
+        "Type": "Application",
+        "hasha256": "abd92fdf530b57206593fd0cf8149be999b88c043d64fa1259c8987b9511962f"
+    },
+    "13": {
+        "Name": "Printers",
+        "GenericName": "Printers",
+        "Exec": "system-config-printer",
+        "Terminal": "false",
+        "Type": "Application",
+        "Icon": "printer",
+        "hasha256": "517dc12e77cab6a923149dc0139453cd4d2e3b8023ffd217418c93d7751f90b7"
+    },
+    "14": {
+        "Name": "Software Updater",
+        "GenericName": "Software Updates",
+        "Exec": "/usr/bin/update-manager",
+        "Icon": "system-software-update",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "948d3ba0790ecba01a34cfcad7253e96e8afee6b8cd252b0d85ef579ac40232c"
+    },
+    "15": {
+        "Terminal": "false",
+        "Icon": "libreoffice-calc",
+        "Type": "Application",
+        "Exec": "libreoffice --calc %U",
+        "Name": "LibreOffice Calc",
+        "GenericName": "Spreadsheet",
+        "hasha256": "c2da4b6a69b8c6c06f38122aaf6b6551295b5d2b9148e49258740eb4ab3e1cf4"
+    },
+    "16": {
+        "Name": "Power Statistics",
+        "Icon": "org.gnome.PowerStats",
+        "Exec": "gnome-power-statistics",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "745e481c675ba0c6cf3fba2895fb253ec9c339bac9899335dbf6b4c9eab596cd"
+    },
+    "17": {
+        "Name": "Sound",
+        "Exec": "gnome-control-center sound",
+        "Icon": "org.gnome.Settings-sound-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "7984a6fb1840d631f6b0015d4b75b6ee5a610e3f8a5efad0a4e330e0a3837a28"
+    },
+    "18": {
+        "Name": "Initial Setup",
+        "Icon": "preferences-system",
+        "Exec": "/usr/libexec/gnome-initial-setup",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "20152a81652807307913000e81eecba3b91d0486283467dfb04ad7015cf89cbd"
+    },
+    "19": {
+        "Name": "Screen Lock",
+        "Exec": "gnome-control-center screen",
+        "Icon": "org.gnome.Settings-system-lock-screen-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "896abd4f3239cf7ffa8181f4aca95a54a49f80f3b5c632f6007bfc6e4dd9895c"
+    },
+    "20": {
+        "Name": "Accessibility",
+        "Exec": "gnome-control-center universal-access",
+        "Icon": "org.gnome.Settings-accessibility",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "bf5bd001dea10219aed37664139a9b830e6b8634d0b868366564bbec8c72ec14"
+    },
+    "21": {
+        "Name": "Microphones",
+        "Exec": "gnome-control-center microphone",
+        "Icon": "org.gnome.Settings-microphone-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "6b62f6ea4056e22ff91eec4207d90b7b4de8c20129a8702d841dcd4d3cd70daa"
+    },
+    "22": {
+        "Name": "Wacom Tablet",
+        "Exec": "gnome-control-center wacom",
+        "Icon": "org.gnome.Settings-wacom-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "cd88233f1a6002b7f12808504f4515cad8888c6e160aeeb8e323e1b48f611938"
+    },
+    "23": {
+        "Terminal": "false",
+        "Icon": "libreoffice-startcenter",
+        "Type": "Application",
+        "Exec": "libreoffice %U",
+        "Name": "LibreOffice",
+        "GenericName": "Office",
+        "hasha256": "7e1a34befdb6ebb954f04bdc161e00ef1fbd8e76bb78f5de6f91d10f67b05ae0"
+    },
+    "24": {
+        "Name": "UXTerm",
+        "Exec": "uxterm",
+        "Terminal": "false",
+        "Type": "Application",
+        "Icon": "mini.xterm",
+        "hasha256": "b63f0cd05859009c6bcedf59bf61ab7f6dcceb48567dda837509c9ac7dea5791"
+    },
+    "25": {
+        "Name": "Archive Manager",
+        "Exec": "file-roller %U",
+        "Terminal": "false",
+        "Type": "Application",
+        "Icon": "org.gnome.FileRoller",
+        "hasha256": "d622183e110b4f9d657c58244a094757d830bb9a1eb9519bc658eb6df3834069"
+    },
+    "26": {
+        "Name": "Users",
+        "Exec": "gnome-control-center user-accounts",
+        "Icon": "org.gnome.Settings-users-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "f9fb1f366a80cc7ac9f71f620fd7a2192e54e34999dca824db4e539ecb0bda0b"
+    },
+    "27": {
+        "Name": "Firefox Web Browser",
+        "GenericName": "Web Browser",
+        "Exec": "firefox %u",
+        "Terminal": "false",
+        "Type": "Application",
+        "Icon": "firefox",
+        "hasha256": "eecd621c81879dc8c5bd4543db009d921b297970043e54c8486a0487e94c87cc"
+    },
+    "28": {
+        "Name": "Ubuntu Desktop",
+        "Exec": "gnome-control-center ubuntu",
+        "Icon": "preferences-ubuntu-panel",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "f6fa806c48559e7f78a1496197b00cd7e19117ec682be350b5c4d23533d2d4b4"
+    },
+    "29": {
+        "Name": "Passwords and Keys",
+        "Exec": "seahorse %u",
+        "Terminal": "false",
+        "Type": "Application",
+        "Icon": "org.gnome.seahorse.Application",
+        "hasha256": "24ef4dda100773f26c9daff364ccd00dc2cad65067966b87ba8a63dffc0afe89"
+    },
+    "30": {
+        "Terminal": "false",
+        "Type": "Application",
+        "Exec": "libreoffice %U",
+        "Name": "LibreOffice XSLT based filters",
+        "GenericName": "XSLT based filters",
+        "hasha256": "030b666beaf783da39d80bd1ee9bfbae1827a83e2937496b0cc28de024a9f57e"
+    },
+    "31": {
+        "Name": "Disks",
+        "Exec": "gnome-disks",
+        "Icon": "org.gnome.DiskUtility",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "6a3953f58220c55609b772e2e26f40d07d549827f3bd1ca6de8188e5bafd29da"
+    },
+    "32": {
+        "Name": "Bluetooth Transfer",
+        "Icon": "bluetooth",
+        "Exec": "bluetooth-sendto",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "666c4888d6673b6c100a2c110da8cf5fb2c1dbf27798c51a03059b63287d91bb"
+    },
+    "33": {
+        "Name": "Qt 5 Linguist",
+        "GenericName": "Translation Tool",
+        "Icon": "linguist-qt5",
+        "Terminal": "false",
+        "Type": "Application",
+        "Exec": "/usr/lib/qt5/bin/linguist %F",
+        "hasha256": "e9cc61485baa344388b18ac7e0b11a90915f01bc886b043a0ce7cf93bd91e687"
+    },
+    "34": {
+        "Type": "Application",
+        "Name": "Evolution Alarm Notify",
+        "Icon": "appointment-soon",
+        "Exec": "/usr/libexec/evolution-data-server/evolution-alarm-notify",
+        "Terminal": "false",
+        "hasha256": "c791bbb9ad0780ab766814f3ce4da98bd22bff32854c5fafeda852a8c6da9dc2"
+    },
+    "35": {
+        "Name": "Printers",
+        "Exec": "gnome-control-center printers",
+        "Icon": "org.gnome.Settings-printers-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "91673cbfbb6880dab2220e73f1176115861bc63abc11290c7e37651cf2ff90ef"
+    },
+    "36": {
+        "Name": "Keyboard Layout",
+        "Icon": "preferences-desktop-keyboard",
+        "Exec": "gkbd-keyboard-display",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "c21a1757b80d5372c9339a33643ebd39660c05cca99509bf2e51a626dbd41b04"
+    },
+    "37": {
+        "Name": "Backups",
+        "Icon": "org.gnome.DejaDup",
+        "Exec": "deja-dup %u",
+        "Type": "Application",
+        "hasha256": "95422079aa9a589546dfa362831e03ce884dda10ec40d9fed65bd3abf7a24479"
+    },
+    "38": {
+        "Name": "Proton VPN",
+        "Exec": "protonvpn-app",
+        "Terminal": "false",
+        "Type": "Application",
+        "Icon": "proton-vpn-logo",
+        "hasha256": "1f67710f46c6126d87ea0c84522cd8750271c8b52ecb5133d9d51a12a4a7c7df"
+    },
+    "39": {
+        "Name": "Language Support",
+        "Exec": "/usr/bin/gnome-language-selector",
+        "Icon": "preferences-desktop-locale",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "a55482667ee83a3beb016fd478544bf999e9a1a21c37db23d45f87c88c61e698"
+    },
+    "40": {
+        "Name": "Chromium Web Browser",
+        "GenericName": "Web Browser",
+        "Exec": "chromium-browser %U",
+        "Terminal": "false",
+        "Type": "Application",
+        "Icon": "chromium-browser",
+        "hasha256": "6564e59f450b33e9d19cfb1d150f4c1eb5d4ae8701c14fd07c5a080d677a9b62"
+    },
+    "41": {
+        "Name": "Sudoku",
+        "Exec": "gnome-sudoku",
+        "Icon": "org.gnome.Sudoku",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "46149de455c61af8c24d0ad53a20499a89f6cbe860b291a599bed4fa43173b1b"
+    },
+    "42": {
+        "Name": "Notifications",
+        "Exec": "gnome-control-center notifications",
+        "Icon": "org.gnome.Settings-notifications-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "53d2978c9f426b39d4969e1310e74916b4937a131d876bd03feaa80af913eef7"
+    },
+    "43": {
+        "Name": "Terminal",
+        "Exec": "gnome-terminal",
+        "Icon": "org.gnome.Terminal",
+        "Type": "Application",
+        "hasha256": "a9caa775a1d5ae964e7c860c22de470a7d2b62edccb8ad1c7cacd88a1b1f3c20"
+    },
+    "44": {
+        "Name": "Sharing",
+        "Exec": "gnome-control-center sharing",
+        "Icon": "org.gnome.Settings-sharing-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "1d337290b1e1e637996629b9182866f4a729fdbd779f05e7eadc450beae83fbf"
+    },
+    "45": {
+        "Name": "TeXInfo",
+        "Exec": "info",
+        "Icon": "dialog-information",
+        "Type": "Application",
+        "Terminal": "true",
+        "hasha256": "0832ba85bd18cad77487e4e8a0010d665034be9b0580454e0e4e953d972c8389"
+    },
+    "46": {
+        "hasha256": "889ee41514fce234c89dfa58ffd94cbbd571f3e35eb345f1cb7b2b6303bae630"
+    },
+    "47": {
+        "Name": "Connectivity",
+        "Exec": "gnome-control-center connectivity",
+        "Icon": "network-workgroup",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "17665186351bce33f3e729965e924d2c2961d7fd024802cf60a92ba8604757de"
+    },
+    "48": {
+        "Name": "Startup Disk Creator",
+        "GenericName": "Startup Disk Creator",
+        "Exec": "usb-creator-gtk",
+        "Icon": "usb-creator-gtk",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "e7a608c6120ac249a43a37510deab0be7bd3c0bbf6e155a417a90458cca6f22e"
+    },
+    "49": {
+        "Name": "Oracle VM VirtualBox",
+        "GenericName": "Virtual Machine",
+        "Type": "Application",
+        "Exec": "VirtualBoxVM %U",
+        "Icon": "virtualbox",
+        "hasha256": "1925158520a18ae4df298cf183b8a72c7cc8d5ea12d1d448915eab5c89335c68"
+    },
+    "50": {
+        "Name": "Oracle VM VirtualBox",
+        "GenericName": "Virtualization Software",
+        "Type": "Application",
+        "Exec": "VirtualBox %U",
+        "Icon": "virtualbox",
+        "hasha256": "b4e0d3a27a6c62684b8502982ba70e269eb792596d495b7600ba347918b01b6a"
+    },
+    "51": {
+        "Name": "Emoji Choice",
+        "Icon": "ibus",
+        "Exec": "/usr/libexec/ibus-extension-gtk3",
+        "Type": "Application",
+        "hasha256": "864e2d3c637ff640a1e343c7d09b9296a9e7a8eedb93fedcf44bedf9b98737de"
+    },
+    "52": {
+        "Name": "Apps",
+        "Exec": "gnome-control-center applications",
+        "Icon": "org.gnome.Settings-applications-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "5700848bafaebc2e95e9cf0da7648fb4969fe154f6e596e11b8fc9dc92da0007"
+    },
+    "53": {
+        "Name": "Handler for snap:// URIs",
+        "Exec": "/usr/bin/snap handle-link %U",
+        "Type": "Application",
+        "hasha256": "4ca1f187eec66e01cc657e31d54c27c1faaf31c92fed2717042afb31b02e3216"
+    },
+    "54": {
+        "Name": "Emoji Choice",
+        "Icon": "ibus",
+        "Exec": "ibus emoji",
+        "Type": "Application",
+        "hasha256": "b66da50752c0b3bf67c6d1e412320fec506390c5f5d376c6366047f753e78b1d"
+    },
+    "55": {
+        "Name": "Bluetooth",
+        "Icon": "org.gnome.Settings-bluetooth-symbolic",
+        "Exec": "gnome-control-center bluetooth",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "47f70925459c01ad3349dd5bbf2f1328dc47ce6030cfa5874d13d8af345c5ec8"
+    },
+    "56": {
+        "Name": "Thunderbird Mail",
+        "GenericName": "Mail Client",
+        "Exec": "thunderbird %u",
+        "Terminal": "false",
+        "Type": "Application",
+        "Icon": "thunderbird",
+        "hasha256": "de22aec994e7688cc7d60d66203e7f82d88bff2539368443a57f39d35ee5a1a9"
+    },
+    "57": {
+        "Name": "Region & Language",
+        "Exec": "gnome-control-center region",
+        "Icon": "org.gnome.Settings-region-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "b0dd84aa3624c62f8a88a1acf9733d342de955fda723206ab47aaa09f5341900"
+    },
+    "58": {
+        "Type": "Application",
+        "Name": "remmina-gnome",
+        "Exec": "remmina-gnome",
+        "hasha256": "676e742a064caaaf3883a398d942d192d7d5dcc56a73b5287c2157732c66e72b"
+    },
+    "59": {
+        "Exec": "/usr/bin/software-properties-gtk --open-tab4",
+        "Icon": "jockey",
+        "Terminal": "false",
+        "Type": "Application",
+        "Name": "Additional Drivers",
+        "hasha256": "a92667838839a42bd19606b35e1f0d591d69f7bc250bee542aa012a222e67525"
+    },
+    "60": {
+        "Name": "Startup Applications",
+        "Exec": "gnome-session-properties",
+        "Icon": "session-properties",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "f34bfc2158fef926d7786fbf0bbc7db7248dbb35e5ac1120558448a7f6949ab5"
+    },
+    "61": {
+        "Name": "Google Chrome",
+        "GenericName": "Web Browser",
+        "Exec": "/usr/bin/google-chrome-stable %U",
+        "Terminal": "false",
+        "Icon": "google-chrome",
+        "Type": "Application",
+        "hasha256": "c844e26679a0091cbaaf24751202038c5be2e5780ab074570bf9e0c08d44064b"
+    },
+    "62": {
+        "Name": "Rhythmbox",
+        "GenericName": "Music Player",
+        "Exec": "rhythmbox-client --select-source %U",
+        "Terminal": "false",
+        "Type": "Application",
+        "Icon": "org.gnome.Rhythmbox3",
+        "hasha256": "f935f560c14ca584921d20803b6395e6eff30dfe9e10c93dfe659557678d61cf"
+    },
+    "63": {
+        "Name": "Mahjongg",
+        "Exec": "gnome-mahjongg",
+        "Icon": "org.gnome.Mahjongg",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "006f7bb7d877a501a1155c5854dd187edff97e075c1fd2beb57bbf8ebda691b2"
+    },
+    "64": {
+        "Name": "Color",
+        "Exec": "gnome-control-center color",
+        "Icon": "org.gnome.Settings-color-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "a8261b59012ce22358d6c75282862da8e70b9232bbdadd5e0cdf091203369393"
+    },
+    "65": {
+        "Name": "System Monitor",
+        "Exec": "gnome-system-monitor",
+        "Icon": "org.gnome.SystemMonitor",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "460449cee65cbcaa4333685387a5b57a4f5a7533ee582ca6ce5a46996ffc5767"
+    },
+    "66": {
+        "Type": "Application",
+        "Name": "Portal",
+        "Icon": "applications-system-symbolic",
+        "Exec": "/usr/libexec/xdg-desktop-portal-gtk",
+        "hasha256": "b0953ea3cb9f04c2eebe3f126827db04dce1dceb92ee9c997029b97ca8c1b975"
+    },
+    "67": {
+        "Type": "Application",
+        "Name": "Sublime Text",
+        "GenericName": "Text Editor",
+        "Exec": "/opt/sublime_text/sublime_text %F",
+        "Terminal": "false",
+        "Icon": "sublime-text",
+        "hasha256": "0d6d9723675eac9c503aaff87b536274ac5c94ff9888bec19935701f8552702f"
+    },
+    "68": {
+        "Name": "Print Preview",
+        "Exec": "evince-previewer %U",
+        "Terminal": "false",
+        "Type": "Application",
+        "Icon": "document-print-preview",
+        "hasha256": "98ba4c4ee1a53e1b085e09cbe5808eb263586cee87966ae674af1c8fe6ed051d"
+    },
+    "69": {
+        "Name": "Removable Media",
+        "Exec": "gnome-control-center removable-media",
+        "Icon": "org.gnome.Settings-removable-media-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "ff47109fbe99c49e942c6ed59fde7d61f6a0ab5fcf4c2f5eb16e6a690c2b01a1"
+    },
+    "70": {
+        "Name": "IBus Preferences",
+        "Exec": "ibus-setup",
+        "Icon": "ibus-setup",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "29f08a6fd4a1f73bd68bc836e84d093dd45c0cf13703d3635f2a54d64af7cd7e"
+    },
+    "71": {
+        "hasha256": "bdb3d8678efc2d98119c50e73947b15c6a6bc5cb22fc6a15de820a0ecf220ac2"
+    },
+    "72": {
+        "Name": "Network",
+        "Exec": "gnome-control-center network",
+        "Icon": "org.gnome.Settings-network-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "452833fd0e19a2dec0106c0f8e6fc901a9cd277181c096bc35c2102dc0f20c79"
+    },
+    "73": {
+        "Name": "Advanced Network Configuration",
+        "Icon": "preferences-system-network",
+        "Exec": "nm-connection-editor",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "aa2b1098be842773666b0df3df39780a95c72de92adb9994aae5dac96a1cd740"
+    },
+    "74": {
+        "Type": "Application",
+        "Name": "Portal",
+        "Icon": "applications-system-symbolic",
+        "Exec": "/usr/libexec/xdg-desktop-portal-gnome",
+        "hasha256": "6c2590717676577fe2318819d937e8ee2dab152dcd9146c0bbd4144d3ec5353c"
+    },
+    "75": {
+        "Name": "Image Viewer",
+        "Exec": "eog %U",
+        "Icon": "org.gnome.eog",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "5901b42072b8c84011fb1f19aa45448e151fe143662cd7df16f0d94459c1b757"
+    },
+    "76": {
+        "Name": "Access Prompt",
+        "Icon": "security-medium",
+        "Exec": "/usr/libexec/gcr-prompter",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "f90fb6db7a573d1f7dbab506d6ef52de939493606c5c84c5799ccc77bbf97c02"
+    },
+    "77": {
+        "Name": "Keyboard",
+        "Exec": "gnome-control-center keyboard",
+        "Icon": "org.gnome.Settings-keyboard-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "bec0ef28287f423cb14be210a394035904c3879ab3e0627f2fcbc8075f5accb8"
+    },
+    "78": {
+        "Name": "XTerm",
+        "Exec": "xterm",
+        "Terminal": "false",
+        "Type": "Application",
+        "Icon": "mini.xterm",
+        "hasha256": "876c3dbd74b34df88ff5b4ebdd427926047a40c2cf39c851d771ce17a6f0349e"
+    },
+    "79": {
+        "Type": "Application",
+        "Name": "AnyDesk",
+        "GenericName": "AnyDesk",
+        "Exec": "/usr/bin/anydesk %u",
+        "Icon": "anydesk",
+        "Terminal": "false",
+        "hasha256": "aba470debb87ce24959ab0879a28c833960752af1f339d5d1864816f52da9396"
+    },
+    "80": {
+        "Name": "Thunderbolt",
+        "Exec": "gnome-control-center thunderbolt",
+        "Icon": "org.gnome.Settings-thunderbolt-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "52ed6c22fe751d20a3e1649462e6f9ab4b7ecc8e5b9c7481236c4325e95f0aaa"
+    },
+    "81": {
+        "Name": "Location Services",
+        "Exec": "gnome-control-center location",
+        "Icon": "org.gnome.Settings-location-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "cffa852d50109f88938f7f1aca3281b95710de2c90bca6ae15acfefff215d89d"
+    },
+    "82": {
+        "Name": "Disk Image Writer",
+        "Exec": "gnome-disks --restore-disk-image %U",
+        "Icon": "drive-removable-media",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "c07613531b7bc596e82279245a44046dfe97feac8152c2426920595707d911d4"
+    },
+    "83": {
+        "Type": "Application",
+        "Name": "Snapd User Session Agent",
+        "Exec": "/bin/false",
+        "Icon": "/usr/share/snapd/snapcraft-logo-bird.svg",
+        "hasha256": "1e4577f290db4d374eb1262c251e9b6ee40efa97c0c38eb1827bc9f2eff22470"
+    },
+    "84": {
+        "Terminal": "false",
+        "Icon": "libreoffice-writer",
+        "Type": "Application",
+        "Exec": "libreoffice --writer %U",
+        "Name": "LibreOffice Writer",
+        "GenericName": "Word Processor",
+        "hasha256": "a299ad4f262fe9b5e5c9651a5a9e4c601b4d00d13c262e3b5a874630b0184951"
+    },
+    "85": {
+        "Name": "Settings",
+        "Icon": "org.gnome.Settings",
+        "Exec": "gnome-control-center",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "1b7f36163e1658bbe878ce4028add653c2aea568497d0fa2bf4bc3f2a90c5ca7"
+    },
+    "86": {
+        "Name": "Report a problem...",
+        "Exec": "/usr/share/apport/apport-gtk -c %f",
+        "Icon": "apport",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "36df80ad9cf95981704f52cf37fad57e6354d9aab0a7b43ff55e0590cb855ad4"
+    },
+    "87": {
+        "Name": "Document Scanner",
+        "Exec": "simple-scan",
+        "Icon": "org.gnome.SimpleScan",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "a528ba3bba71bbebed5588dcd753fb90de693a77b96571beea1d580ab87f02c9"
+    },
+    "88": {
+        "Type": "Application",
+        "Name": "Characters",
+        "Icon": "org.gnome.Characters",
+        "Exec": "/usr/bin/gnome-characters",
+        "hasha256": "8b4d2e34f8161d03df2bdc23e10ffd8dd40d866a99ed92873898e260b56772c9"
+    },
+    "89": {
+        "Name": "Fonts",
+        "Icon": "org.gnome.font-viewer",
+        "Exec": "gnome-font-viewer %u",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "5417798650749867d811e7323277a63995077012bf3cd2368574d02e08a8e4f1"
+    },
+    "90": {
+        "Name": "Cameras",
+        "Exec": "gnome-control-center camera",
+        "Icon": "org.gnome.Settings-camera-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "9db1f8353ccac516bebe9e838078b4c5072dd45169e5b9e5002564309221d299"
+    },
+    "91": {
+        "Name": "Displays",
+        "Exec": "gnome-control-center display",
+        "Icon": "org.gnome.Settings-display-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "5ce4255c0c65bde1985c4ac381500967adede70d6cdfa08ee3397df387bc2834"
+    },
+    "92": {
+        "Name": "Calculator",
+        "Exec": "gnome-calculator",
+        "Icon": "org.gnome.Calculator",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "18f21a1b230271e5821aa2e454d5fae9bf96356ef997d95688d684cc0a8e0068"
+    },
+    "93": {
+        "Name": "Files",
+        "Exec": "nautilus --new-window %U",
+        "Icon": "org.gnome.Nautilus",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "92babcc62d4893e57fc6134eb44d75d6fbd29d9290eb7b1d6409aad4d3f78834"
+    },
+    "94": {
+        "Exec": "/usr/bin/software-properties-gtk --open-tab6",
+        "Icon": "livepatch",
+        "Terminal": "false",
+        "Type": "Application",
+        "Name": "Livepatch",
+        "hasha256": "f99a820f960920fdf0c4806e7442fd5e2e12918cadfbbdb44cb1f274c6bccfd3"
+    },
+    "95": {
+        "Name": "Run Software",
+        "Exec": "nautilus-autorun-software %u",
+        "Icon": "application-x-executable",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "915633275be139248a34c23a934396c4cd75fddbbfc6ae511699f6782c82a7a7"
+    },
+    "96": {
+        "Type": "Application",
+        "Name": "Remmina Connect",
+        "Exec": "remmina-file-wrapper -c %U",
+        "Icon": "org.remmina.Remmina",
+        "Terminal": "false",
+        "hasha256": "5beb72b1e7d8e4834c963bf91d21e8dfdf4c9fb45f7718a457c83083381d6617"
+    },
+    "97": {
+        "Name": "AisleRiot Solitaire",
+        "Exec": "sol",
+        "Icon": "gnome-aisleriot",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "ee51dd3408e2e09b94748d6a0ffd63481e5892b5c85d5e4b4f4feb0773dfd0c5"
+    },
+    "98": {
+        "Name": "File History & Trash",
+        "Exec": "gnome-control-center usage",
+        "Icon": "org.gnome.Settings-file-history-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "bef8f042d9aff17f8142a0ad61141874c28f633218eb6a0be0ba8f73c049d041"
+    },
+    "99": {
+        "Name": "Mouse & Touchpad",
+        "Exec": "gnome-control-center mouse",
+        "Icon": "org.gnome.Settings-mouse-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "c05f6d940f03062eef8751458347765f387d470c7ee7f5a098a65149b1adfcf1"
+    },
+    "100": {
+        "Name": "Wi-Fi",
+        "Exec": "gnome-control-center wifi",
+        "Icon": "network-wireless",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "60ad81452353527807cff7e9801db419074eb52e50ddadb92f3781fa9791617f"
+    },
+    "101": {
+        "Name": "GNOME System Monitor",
+        "Exec": "gnome-system-monitor",
+        "Icon": "org.gnome.SystemMonitor",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "81f7dd09e62f1e55b6ff07f44ea9e0a91dad16b16008d9ea9800c38dab950f28"
+    },
+    "102": {
+        "Type": "Application",
+        "Name": "GNOME Shell",
+        "Exec": "/usr/bin/gnome-shell",
+        "hasha256": "adf37e0a0bf1d7114e48b6c5211b8e04b916a6ea6195e5cb07d77b4431db6035"
+    },
+    "103": {
+        "Name": "Vim",
+        "GenericName": "Text Editor",
+        "Exec": "vim %F",
+        "Terminal": "true",
+        "Type": "Application",
+        "Icon": "gvim",
+        "hasha256": "3c01870a1f10069e5a6f43b397435d1fcb33bbd6b6c2037dd0aec1b3a30c64ad"
+    },
+    "104": {
+        "Name": "View file",
+        "Exec": "/usr/bin/gcr-viewer",
+        "Type": "Application",
+        "Terminal": "false",
+        "hasha256": "a9118b82b4f12c3402054d9fdc2d9d9e24800fca031af4ce35d8f71e35aa53f9"
+    },
+    "105": {
+        "Name": "Network",
+        "Icon": "nm-device-wireless",
+        "Exec": "nm-applet",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "6e068d739a3b3b90f523cf2e5ec3e5f7811a8071cacf1f25d33032499ee7baaa"
+    },
+    "106": {
+        "Name": "Mobile Network",
+        "Exec": "gnome-control-center wwan",
+        "Icon": "org.gnome.Settings-mobile-network-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "07b61fdaa3e92d2412f327496d3bbddb34d7172798a29aec49cd19cd63d94eb6"
+    },
+    "107": {
+        "Name": "Geoclue Demo agent",
+        "GenericName": "Demo geoclue agent",
+        "Exec": "/usr/libexec/geoclue-2.0/demos/agent",
+        "Icon": "mark-location-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "250ca8799e193f7713a8213a7ad8f121976a046e6b95a278c22dc192de3c1482"
+    },
+    "108": {
+        "Name": "Visual Studio Code - URL Handler",
+        "GenericName": "Text Editor",
+        "Exec": "/usr/share/code/code --open-url %U",
+        "Icon": "vscode",
+        "Type": "Application",
+        "hasha256": "8b2213efa084b54da62cbd0425562387b118202cc3ab39eafd3b77fb19d2068a"
+    },
+    "109": {
+        "Name": "Input Method",
+        "Type": "Application",
+        "Exec": "im-config",
+        "Terminal": "false",
+        "Icon": "input-keyboard",
+        "hasha256": "00820ba4b67ef27d7c74db7ac603908da0e9f1d03011cf299dbbbc6f6c593d7a"
+    },
+    "110": {
+        "Name": "Date & Time",
+        "Exec": "gnome-control-center datetime",
+        "Icon": "org.gnome.Settings-time-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "c74429e4f84c0a7ffeb11fa1f81145499f437307a030bd030d9c65a3e963fdf5"
+    },
+    "111": {
+        "Type": "Application",
+        "Name": "Wireshark",
+        "GenericName": "Network Analyzer",
+        "Icon": "org.wireshark.Wireshark",
+        "Exec": "wireshark %f",
+        "Terminal": "false",
+        "hasha256": "68562eabc83e0e1ad5054010682ecab401db9fdf318d94ff4974008986c8a10a"
+    },
+    "112": {
+        "Exec": "gnome-terminal --preferences",
+        "Icon": "org.gnome.Terminal.Preferences",
+        "Name": "Terminal Preferences",
+        "Type": "Application",
+        "hasha256": "694b3acae4d83e9260b1635e2d00b1d2c9778a141e64f36f03db205516e9c33d"
+    },
+    "113": {
+        "Name": "About",
+        "Exec": "gnome-control-center info-overview",
+        "Icon": "org.gnome.Settings-about-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "8e4322aaaa67e5ec6fd49f32f7414a252fb862f33ebc0f4acd53e8f5061e5a8d"
+    },
+    "114": {
+        "Terminal": "false",
+        "Icon": "libreoffice-math",
+        "Type": "Application",
+        "Exec": "libreoffice --math %U",
+        "Name": "LibreOffice Math",
+        "GenericName": "Formula Editor",
+        "hasha256": "fd811595c4dc061f15d5eb3cd4ef8ac0dae3e3862cdedc8ce84e92aa228b0389"
+    },
+    "115": {
+        "Name": "Transmission",
+        "GenericName": "BitTorrent Client",
+        "Exec": "transmission-gtk %U",
+        "Icon": "transmission",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "3e8147c28ebeeec8ef54c26f49f91a82b7ee4ba9ccfd44b6afe90962847f5398"
+    },
+    "116": {
+        "Name": "Disk Image Mounter",
+        "Exec": "gnome-disk-image-mounter %U",
+        "Icon": "drive-removable-media",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "34ccd060b1fdbc7197aa6b1e628c04085cf6964ac3f9810c261e8cf8d89c39ea"
+    },
+    "117": {
+        "Name": "Appearance",
+        "Exec": "gnome-control-center background",
+        "Icon": "org.gnome.Settings-appearance-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "16edbd6b730d04f50c1cb820163b97ce813da5d05075161a96fb04f5d7c48854"
+    },
+    "118": {
+        "Name": "Visual Studio Code",
+        "GenericName": "Text Editor",
+        "Exec": "/usr/share/code/code --unity-launch %F",
+        "Icon": "vscode",
+        "Type": "Application",
+        "hasha256": "e4ac6fbf888643e1cfbebece8bf41fa1ec3e7753c655277ffc3865e249c940e8"
+    },
+    "119": {
+        "Name": "Search",
+        "Exec": "gnome-control-center search",
+        "Icon": "org.gnome.Settings-search-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "c8cd1a5c12d275002943f38e34e63b039176226b8348ea937b5f486cd4c07de6"
+    },
+    "120": {
+        "Name": "Calendar",
+        "Exec": "gnome-calendar %U",
+        "Icon": "org.gnome.Calendar",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "13bdd84b82da9f9dfd7e7d134fdf732ba3087d4fd8224569064f54f24854fd6c"
+    },
+    "121": {
+        "Exec": "gnome-text-editor %U",
+        "Name": "Text Editor",
+        "GenericName": "Text Editor",
+        "Icon": "org.gnome.TextEditor",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "6b565d601a531af000fb4b3234ef1df62fba9683be622757d4cbb8db20142f76"
+    },
+    "122": {
+        "Name": "IBus Table Setup",
+        "Exec": "/usr/libexec/ibus-setup-table",
+        "Icon": "/usr/share/ibus-table/icons/chinese.svg",
+        "Type": "Application",
+        "hasha256": "9b1d3d3e5c72443a6c115e231e82ec94610c6227de8d0a0f348d2e901dd5eeea"
+    },
+    "123": {
+        "Name": "Power",
+        "Exec": "gnome-control-center power",
+        "Icon": "org.gnome.Settings-power-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "fece534aa26af023f8f5b503dd7f08443e2ae54b7b51e83bf02b3ac6219aa33c"
+    },
+    "124": {
+        "Name": "Default Apps",
+        "Exec": "gnome-control-center default-apps",
+        "Icon": "org.gnome.Settings-default-apps-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "3897b57a5ea5baa761a66022b559e6da3d4f76e17c4b87e17b6b83011640e7f8"
+    },
+    "125": {
+        "Name": "Qt 5 Designer",
+        "GenericName": "Interface Designer",
+        "Icon": "designer-qt5",
+        "Terminal": "false",
+        "Type": "Application",
+        "Exec": "/usr/lib/qt5/bin/designer %F",
+        "hasha256": "dd0252d2f0351e5ce5fdc446aa97b2069e0cb3fae082b90e9642cdb384aef3ab"
+    },
+    "126": {
+        "Name": "Multitasking",
+        "Exec": "gnome-control-center multitasking",
+        "Icon": "org.gnome.Settings-multitasking-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "637e6d60d512505e9f69456cd5106500c889c60411e7c4c429252a56258403c4"
+    },
+    "127": {
+        "Name": "Network Login",
+        "Type": "Application",
+        "Exec": "gapplication launch org.gnome.Shell.PortalHelper",
+        "Icon": "network-workgroup",
+        "hasha256": "fd0bb9017db813d8a560d5214ab144b5d3626b022731906eca74a6d2292f0097"
+    },
+    "128": {
+        "Terminal": "false",
+        "Icon": "libreoffice-impress",
+        "Type": "Application",
+        "Exec": "libreoffice --impress %U",
+        "Name": "LibreOffice Impress",
+        "GenericName": "Presentation",
+        "hasha256": "12ad87c66011bc0020796e18af9d675b676b1930a427168c61ce8bef778be451"
+    },
+    "129": {
+        "Name": "Help",
+        "Exec": "yelp %u",
+        "Icon": "org.gnome.Yelp",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "9ad73393675ec02c3dca12b49db57c52d3070670357335325cf8c6b161afce62"
+    },
+    "130": {
+        "Type": "Application",
+        "Name": "Extensions",
+        "Icon": "org.gnome.Shell.Extensions",
+        "Exec": "false",
+        "hasha256": "a1df4032ff18f9b195f177c9999b16d90c0a3d96bb874db2b31bcf66e07b5903"
+    },
+    "131": {
+        "Name": "Document Viewer",
+        "Exec": "evince %U",
+        "Terminal": "false",
+        "Type": "Application",
+        "Icon": "org.gnome.Evince",
+        "hasha256": "c385b701ca526f2f895eb947e4d75e23a71b248e543723dc0af49c9843ce015e"
+    },
+    "132": {
+        "Name": "Shotwell Viewer",
+        "GenericName": "Photo Viewer",
+        "Exec": "shotwell %f",
+        "Icon": "shotwell",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "c76025fb74378f61ed36fda768deb03aefe9d67467a714b5be1e4712111369b7"
+    },
+    "133": {
+        "Name": "Online Accounts",
+        "Exec": "gnome-control-center online-accounts",
+        "Icon": "org.gnome.Settings-online-accounts-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "f3cd1423e4e30cc359bb602508e78fa0a1d2868a6f26ec92b48244c3b8bee393"
+    },
+    "134": {
+        "Name": "PulseAudio Volume Control",
+        "GenericName": "Volume Control",
+        "Exec": "pavucontrol",
+        "Icon": "multimedia-volume-control",
+        "Type": "Application",
+        "hasha256": "b76e20329c30fde54c144c2c673b743cd1145a57e8ad71c0933b023a4d52891d"
+    },
+    "135": {
+        "Name": "Remmina",
+        "GenericName": "Remote Desktop Client",
+        "Exec": "remmina-file-wrapper %U",
+        "Icon": "org.remmina.Remmina",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "a2013a47901985d0b9c889a55ef95bb6b67e5eb5ede0f74bcb77c926d6984f69"
+    },
+    "136": {
+        "Name": "Diagnostics",
+        "Exec": "gnome-control-center diagnostics",
+        "Icon": "org.gnome.Settings-diagnostics-symbolic",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "ff99d0fa2eeaa68e428fa845e385945f5c0ff7eed8374863f8d61f99ee1fc23e"
+    },
+    "137": {
+        "Name": "Videos",
+        "Exec": "totem %U",
+        "Icon": "org.gnome.Totem",
+        "Terminal": "false",
+        "Type": "Application",
+        "hasha256": "c919d3b232ed91771360c23cf1232a6116fb583842eef5667febe612b593bf46"
+    },
+    "138": {
+        "Name": "Logs",
+        "GenericName": "Log Viewer",
+        "Type": "Application",
+        "Exec": "gnome-logs",
+        "Icon": "org.gnome.Logs",
+        "Terminal": "false",
+        "hasha256": "82a6ba2eef94a96ae473a263a26a7ecd3482cc41a40429d161b63dd79e38a420"
+    }
+}

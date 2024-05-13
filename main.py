@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QSc
 from PyQt5.QtWidgets import QRadioButton, QLabel, QSizePolicy, QGraphicsDropShadowEffect, QHBoxLayout
 from PyQt5.QtGui import QColor, QPaintEvent, QPainter, QBrush, QPen, QPixmap
 from PyQt5.QtCore import   QPoint, Qt, QRect
-
+from utils import collect
 
 
 class animeToggleButton(QCheckBox):
@@ -145,6 +145,7 @@ class Ui_MainWindow(object):
 
 
 if __name__ == "__main__":
+    collect.Collect_app_info()
     app = QApplication(sys.argv)
     MainWindow = QMainWindow()
     MainWindow.setProperty("mainLinux", True)
