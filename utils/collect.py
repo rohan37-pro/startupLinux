@@ -10,6 +10,8 @@ def Collect_app_info():
     key = 0
     for apps in desktops:
         applications[key] = {}
+        desktop_file_name = apps
+        applications[key]["file_name"] = desktop_file_name
         with open(f"/usr/share/applications/{apps}", 'r') as file:
             commands = file.readlines()
             sha256 = hashlib.sha256("".join(commands).encode()).hexdigest()
@@ -19,18 +21,19 @@ def Collect_app_info():
                 section = c.strip()
             if section=="[Desktop Entry]":
                 c = c.split("=")
-                if c[0].strip() in ["Name","Terminal", "Icon", "Exec", "GenericName", "Type"]:
+                if c[0].strip() in ["Name","Terminal", "Icon", "Exec", "GenericName", "Type", "NoDisplay"]:
                     applications[key][c[0].strip()] = "".join(c[1:]).strip()
                 if c[0].strip()=="Icon":
-                    icon = icon_search_algo.search("".join(c[1:]))
+                    icon = icon_search_algo.search("".join(c[1:]).strip())
+                    applications[key]['icon_path'] = icon
+
         applications[key]["hasha256"] = sha256
+
         key+=1
     
     with open("database/app_info.json", 'w') as file:
         json.dump(applications, file, indent=4)
-
-
-
+ 
 
 
 if __name__=="__main__":

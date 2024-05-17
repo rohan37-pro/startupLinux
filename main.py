@@ -4,6 +4,12 @@ from PyQt5.QtWidgets import QRadioButton, QLabel, QSizePolicy, QGraphicsDropShad
 from PyQt5.QtGui import QColor, QPaintEvent, QPainter, QBrush, QPen, QPixmap
 from PyQt5.QtCore import   QPoint, Qt, QRect
 from utils import collect
+import json
+
+
+# testing purpose
+
+
 
 
 class animeToggleButton(QCheckBox):
@@ -91,7 +97,11 @@ class Ui_MainWindow(object):
 
 
         self.app_cards = {}
-        for i in range(10):
+        with open("database/app_info.json", "r") as file:
+            app_info = json.load(file)
+        for i in app_info:
+            if "icon_path" not in app_info[i]:
+                continue
             self.app_cards[i] = {}
             self.app_cards[i]['frame'] = QFrame()
             self.app_cards[i]['frame'].setProperty("framecontainer", True)
@@ -109,17 +119,21 @@ class Ui_MainWindow(object):
             self.app_cards[i]['label'].setProperty("app_icon", True)
             self.app_cards[i]['label'].setFixedHeight(80)
             self.app_cards[i]['label'].setFixedWidth(80)
-            self.app_cards[i]['label'].setPixmap(QPixmap("/home/rohan/Pictures/swarnali.png").scaled(self.app_cards[i]['label'].width()-20, self.app_cards[i]['label'].height()-20))
+
+            self.app_cards[i]['label'].setPixmap(QPixmap(app_info[i]['icon_path']).scaled(self.app_cards[i]['label'].width()-15, self.app_cards[i]['label'].height()-15))
             self.app_cards[i]['label'].setAlignment(Qt.AlignCenter)
-            
-            self.app_cards[i]['label_2'] = QLabel("hello there this is my area, don't interfere")
+            if "GenericName" in app_info[i] :
+                name = app_info[i]['Name'] + ", "+ app_info[i]['GenericName']
+                self.app_cards[i]['label_2'] = QLabel(name)
+            else:
+                self.app_cards[i]['label_2'] = QLabel(app_info[i]['Name'])
             self.app_cards[i]['label_2'].setProperty("desktop_app_name", True)
 
 
 
             layout = QHBoxLayout(self.app_cards[i]['frame']) 
         
-            layout.addStretch()
+            
             layout.addWidget(self.app_cards[i]['label'])
             layout.addWidget(self.app_cards[i]['label_2'])
             layout.addStretch()
@@ -128,7 +142,7 @@ class Ui_MainWindow(object):
             layout.addStretch()
             layout.addStretch()
             layout.addWidget(self.app_cards[i]['toggleButton'])
-            layout.addStretch()
+            
 
 
             boxlayout.addWidget(self.app_cards[i]['frame'])
@@ -136,7 +150,7 @@ class Ui_MainWindow(object):
         self.vboxlayout.addWidget(self.scrollArea)
         MainWindow.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow)
+        # self.retranslateUi(MainWindow)
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle("MainWindow")
