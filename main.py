@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QRadioButton, QLabel, QSizePolicy, QGraphicsDropShad
 from PyQt5.QtGui import QColor, QPaintEvent, QPainter, QBrush, QPen, QPixmap
 from PyQt5.QtCore import   QPoint, Qt, QRect
 from utils import collect
+from utils import action
 import json
 
 
@@ -19,6 +20,7 @@ class animeToggleButton(QCheckBox):
             bgcolor='#777',
             circle_color='#DDD',
             active_color='#00d5ff',
+            id = None
     ):
         QCheckBox.__init__(self)
         self.setFixedSize(width, 28)
@@ -27,10 +29,9 @@ class animeToggleButton(QCheckBox):
         self._bgcolor= bgcolor
         self._circle_color = circle_color
         self._active_color = active_color
+        self.id = id
 
-
-        self.stateChanged.connect(self.debug)
-
+        self.stateChanged.connect(lambda state : action.startup_on_off(self.id, self.isChecked()))
    
     def debug(self):
         print(f"status : {self.isChecked()}")
@@ -70,7 +71,7 @@ class animeToggleButton(QCheckBox):
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(550, 500)
+        MainWindow.resize(700, 500)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setProperty("mainwidget", True)
         self.centralwidget.setObjectName("centralwidget")
@@ -99,6 +100,9 @@ class Ui_MainWindow(object):
         self.app_cards = {}
         with open("database/app_info.json", "r") as file:
             app_info = json.load(file)
+        with open("database/startup_onned.json", "r") as file:
+            startup_apps = json.load(file)
+
         for i in app_info:
             if "icon_path" not in app_info[i]:
                 continue
@@ -110,10 +114,9 @@ class Ui_MainWindow(object):
             self.app_cards[i]['frame'].setMaximumWidth(800)
             self.app_cards[i]['frame'].setFrameShape(QFrame.StyledPanel)
 
-
-            self.app_cards[i]['toggleButton'] = animeToggleButton()
+            self.app_cards[i]['toggleButton'] = animeToggleButton(id=i)
             self.app_cards[i]['toggleButton'].setProperty("toggleButt", True)
-            self.app_cards[i]['toggleButton'].setStyleSheet(";")
+            self.setToggleButtonState(self.app_cards[i]['toggleButton'], app_info[i]['file_name'], startup_apps)
 
             self.app_cards[i]['label'] = QLabel("TextLabel")
             self.app_cards[i]['label'].setProperty("app_icon", True)
@@ -152,14 +155,17 @@ class Ui_MainWindow(object):
 
         # self.retranslateUi(MainWindow)
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle("MainWindow")
-        for i in range(10):
-            self.app_cards[i]['toggleButton'].setText("OFF")
+    def setToggleButtonState(self, button, file_name, startup_apps):
+        if file_name in startup_apps and startup_apps[file_name]==True:
+            button.blockSignals(True)
+            button.setCheckState(Qt.Checked)
+            button.blockSignals(False)
+        if button.isChecked():
+            print(f"{file_name}=True")
 
 
 if __name__ == "__main__":
-    collect.Collect_app_info()
+    # collect.Collect_app_info()
     app = QApplication(sys.argv)
     MainWindow = QMainWindow()
     MainWindow.setProperty("mainLinux", True)
