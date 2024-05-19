@@ -1,7 +1,8 @@
 from PyQt5.QtWidgets import QDialog, QPushButton, QVBoxLayout, QFileDialog, QCheckBox
-from PyQt5.QtCore import   QPoint, Qt, QRect
-from PyQt5.QtGui import QPainter, QColor
+from PyQt5.QtCore import   QPoint, Qt, QRect, QSize
+from PyQt5.QtGui import QPainter, QColor, QIcon, QPixmap
 from utils import action
+import json, os
 
 
 
@@ -11,9 +12,16 @@ class FolderBrowser(QDialog):
 
         self.setWindowTitle("Browse Folder")
 
-        self.button = QPushButton("Browse")
+        self.button = QPushButton()
+        self.button.setFixedHeight(70)
+        self.button.setFixedWidth(70)
+        self.button.setIcon(QIcon("database/icon/plus-circle-dotted-white.svg"))
+        self.button.setIconSize(QSize(50,50))
+        self.button.setStyleSheet("border: 2px solid rgb(35, 35, 35); \
+                                  border-radius: 35px;\
+                                  background-color: rgb(40, 40, 40);")
         self.button.clicked.connect(self.browse_folder)
-
+        self.setStyleSheet("background-color: rgb(55, 55, 55);")
         self.layout = QVBoxLayout()
         self.layout.addWidget(self.button)
         self.setLayout(self.layout)
@@ -21,7 +29,12 @@ class FolderBrowser(QDialog):
     def browse_folder(self):
         # options = QFileDialog.Options()
         file_filter = "Shell scripts (*.sh);;All files (*)"
-        filename, _ = QFileDialog.getOpenFileName(self, "Select File", "", file_filter)
+        filename, _ = QFileDialog.getOpenFileName(self, "Select File", os.path.expanduser("~"), file_filter)
+        with open("database/added_sh.json", 'r') as file:
+            added_sh = json.load(file)
+        added_sh[f"{filename}"] = True
+        with open("database/added_sh.json", 'w') as file:
+            added_sh = json.dump(added_sh, file, indent=4)
         if filename:
             print("Selected file:", filename)
 
