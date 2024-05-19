@@ -1,69 +1,15 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QScrollArea, QFrame, QCheckBox
-from PyQt5.QtWidgets import QRadioButton, QLabel, QSizePolicy, QGraphicsDropShadowEffect, QHBoxLayout
-from PyQt5.QtGui import QColor, QPaintEvent, QPainter, QBrush, QPen, QPixmap
-from PyQt5.QtCore import   QPoint, Qt, QRect
-from utils import collect
-from utils import action
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QScrollArea, QFrame
+from PyQt5.QtWidgets import  QLabel, QSizePolicy, QGraphicsDropShadowEffect, QHBoxLayout
+from PyQt5.QtGui import QColor, QPixmap
+from PyQt5.QtCore import   Qt
+from utils import collect, action
+from utils.ui_componenet import FolderBrowser, animeToggleButton
 import json
 
 
 # testing purpose
 
-
-
-
-class animeToggleButton(QCheckBox):
-    def __init__(
-            self,
-            width=60,
-            bgcolor='#777',
-            circle_color='#DDD',
-            active_color='#00d5ff',
-            id = None
-    ):
-        QCheckBox.__init__(self)
-        self.setFixedSize(width, 28)
-        self.setCursor(Qt.PointingHandCursor)
-        
-        self._bgcolor= bgcolor
-        self._circle_color = circle_color
-        self._active_color = active_color
-        self.id = id
-
-        self.stateChanged.connect(lambda state : action.startup_on_off(self.id, self.isChecked()))
-   
-    def debug(self):
-        print(f"status : {self.isChecked()}")
-
-
-    def hitButton(self, pos: QPoint) :
-        return self.contentsRect().contains(pos)
-
-    def paintEvent(self, event):
-        paint = QPainter(self)
-        paint.setRenderHint(QPainter.Antialiasing)
-        paint.setPen(Qt.NoPen)
-
-        rect = QRect(0, 0, self.width(), self.height())
-
-        if not self.isChecked():
-            paint.setBrush(QColor(self._bgcolor))
-            paint.drawRoundedRect(0, 0, rect.width(), self.height(), self.height()/2, self.height()/2)
-            
-            # paint circle
-            paint.setBrush(QColor(self._circle_color))
-            paint.drawEllipse(3, 3, 22, 22)
-        else:
-            paint.setBrush(QColor(self._active_color))
-            paint.drawRoundedRect(0, 0, rect.width(), self.height(), self.height()/2, self.height()/2)
-            
-            # paint circle
-            paint.setBrush(QColor(self._circle_color))
-            paint.drawEllipse(self.width()-26, 3, 22, 22)
-
-
-        paint.end()
 
     
 
@@ -110,6 +56,13 @@ class Ui_MainWindow(object):
         self.script_card[0]['frame'].setFixedHeight(100)  # Set fixed height
         self.script_card[0]['frame'].setMaximumWidth(800)
         self.script_card[0]['frame'].setFrameShape(QFrame.StyledPanel)
+        self.script_card[0]['fileDialog'] = FolderBrowser(self)
+
+        layout = QHBoxLayout(self.script_card[0]['frame'])
+        layout.addStretch()
+        layout.addWidget(self.script_card[0]['fileDialog'])
+        layout.addStretch()
+
         self.boxlayout.addWidget(self.script_card[0]['frame'])
 
 
