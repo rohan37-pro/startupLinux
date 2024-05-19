@@ -1,4 +1,5 @@
-from PyQt5.QtWidgets import QDialog, QPushButton, QVBoxLayout, QFileDialog, QCheckBox
+from PyQt5.QtWidgets import QDialog, QPushButton, QVBoxLayout, QFileDialog, QCheckBox, QFrame
+from PyQt5.QtWidgets import QSizePolicy, QLabel, QHBoxLayout
 from PyQt5.QtCore import   QPoint, Qt, QRect, QSize
 from PyQt5.QtGui import QPainter, QColor, QIcon, QPixmap
 from utils import action
@@ -7,7 +8,7 @@ import json, os
 
 
 class FolderBrowser(QDialog):
-    def __init__(self, object, parent=None):
+    def __init__(self,  parent=None):
         super().__init__(parent)
 
         self.setWindowTitle("Browse Folder")
@@ -32,13 +33,14 @@ class FolderBrowser(QDialog):
         filename, _ = QFileDialog.getOpenFileName(self, "Select File", os.path.expanduser("~"), file_filter)
         with open("database/added_sh.json", 'r') as file:
             added_sh = json.load(file)
-        added_sh[f"{filename}"] = True
+        if filename=="" or filename in added_sh:
+            return
+        added_sh[f"{filename}"] = False
         with open("database/added_sh.json", 'w') as file:
             added_sh = json.dump(added_sh, file, indent=4)
-        if filename:
-            print("Selected file:", filename)
-
-
+        
+        num = action.get_needEmptyNumber()
+        os.rename(f"database/needEmpty.{num}.txt", f"database/needEmpty.{num+1}.txt")
 
 
 
@@ -49,7 +51,9 @@ class animeToggleButton(QCheckBox):
             bgcolor='#777',
             circle_color='#DDD',
             active_color='#00d5ff',
-            id = None
+            id = None,
+            sh=False,
+            filename = ""
     ):
         QCheckBox.__init__(self)
         self.setFixedSize(width, 28)
@@ -59,8 +63,13 @@ class animeToggleButton(QCheckBox):
         self._circle_color = circle_color
         self._active_color = active_color
         self.id = id
+        self.sh = sh
+        self.filename = filename
 
-        self.stateChanged.connect(lambda state : action.startup_on_off(self.id, self.isChecked()))
+        if self.sh==False:
+            self.stateChanged.connect(lambda state : action.startup_on_off(self.id, self.isChecked()))
+        if self.sh==True and self.filename!="":
+            self.stateChanged.connect(lambda state : action.startup_on_off_sh(self.filename, self.isChecked()))
    
     def debug(self):
         print(f"status : {self.isChecked()}")
