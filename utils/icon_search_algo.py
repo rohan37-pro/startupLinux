@@ -3,8 +3,10 @@ import subprocess
 
 def search(icon):
     print(f"searching for {icon}")
-    if (icon.endswith('.png') or icon.endswith('.svg')) or icon.startswith('/'):
+    if (icon.endswith('.png') or icon.endswith('.svg') or icon.endswith('.xpm')) and icon.startswith('/'):
         return icon
+    elif icon.endswith('.png') or icon.endswith('.svg') or icon.endswith('.xpm'):
+        icon = icon.replace('.png', '').replace('.svg', '').replace('.xmp', '')
     try:
         icon_path = subprocess.run(f"find /usr/share/pixmaps -name {icon}.png 2>/dev/null", shell=True, stdout=subprocess.PIPE)
         if icon_path.stdout:
