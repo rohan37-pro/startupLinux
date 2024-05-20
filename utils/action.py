@@ -1,6 +1,8 @@
 import os
 import subprocess
 import json
+import h5py
+import random
 
 HOME_DIR = os.path.expanduser("~/")
 
@@ -102,3 +104,18 @@ def get_needEmptyNumber():
         if i.startswith('needEmpty'):
             num = i.split('.')[1]
     return int(num)
+
+def chattr_needEmpty():
+    os.path
+    with h5py.File("database/needEmpty.txt", 'r') as meta:
+        metadata = dict(meta.attrs.items())
+    r = random.randint(1, 10000)
+    while r==metadata['emptyattr']:
+        r = random.randint(1, 10000)
+    with h5py.File("database/needEmpty.txt", 'w') as meta:
+        meta.attrs['emptyattr'] = r
+
+def setattr_needEmpty0():
+    with h5py.File("database/needEmpty.txt", 'w') as meta:
+        meta.attrs['emptyattr'] = 0
+

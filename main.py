@@ -21,7 +21,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.vboxlayout = QVBoxLayout(self.centralwidget)
         self.vboxlayout.setObjectName("vboxlayout") 
-
+        self.frame_widgets = []
         self.boxlayout = QVBoxLayout()
         self.boxlayout.setContentsMargins(10, 10, 10, 50)
         self.boxlayout.setAlignment(Qt.AlignHCenter)
@@ -67,10 +67,10 @@ class Ui_MainWindow(object):
         self.boxlayout.addWidget(self.script_card[0]['frame'])
         self.loadScriptCards()
 
-        num = action.get_needEmptyNumber()
-        os.rename(f"database/needEmpty.{num}.txt", f"database/needEmpty.0.txt")
+        
+        action.setattr_needEmpty0()
         self.watcher = QFileSystemWatcher()
-        file_path = "database/needEmpty.0.txt"
+        file_path = "database/needEmpty.txt"
         self.watcher.addPath(file_path)
         self.watcher.fileChanged.connect(self.insert_sh_frame)
 
@@ -199,16 +199,12 @@ class Ui_MainWindow(object):
             action.startup_delete_sh(filename)
         else:
             action.startup_delete_sh(self.script_card[index]["filename"])
+        self.script_card[index]['frame'].deleteLater()
         self.boxlayout.removeWidget(self.script_card[index]['frame'])
         del self.script_files[self.script_card[index]["filename"]] 
 
     def insert_sh_frame(self):
-        num = action.get_needEmptyNumber()
-        self.watcher.blockSignals(True)
-        self.watcher.removePath(f"needEmpty.{num-1}.txt")
-        self.watcher.addPath(f"needEmpty.{num}.txt")
-        self.watcher.fileChanged.connect(self.insert_sh_frame)
-        self.watcher.blockSignals(False)
+        
         print("file changed detected !!")
         great = -1
         for i in self.script_card:

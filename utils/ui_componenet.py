@@ -39,8 +39,7 @@ class FolderBrowser(QDialog):
         with open("database/added_sh.json", 'w') as file:
             added_sh = json.dump(added_sh, file, indent=4)
         
-        num = action.get_needEmptyNumber()
-        os.rename(f"database/needEmpty.{num}.txt", f"database/needEmpty.{num+1}.txt")
+        action.chattr_needEmpty()
 
 
 
