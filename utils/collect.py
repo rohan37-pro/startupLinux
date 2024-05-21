@@ -165,7 +165,7 @@ def load_current_user_info():
             json.dump({}, file)
 
     with open("database/current_user.json", 'w') as file:
-        json.dump(cur_usr, file)
+        json.dump(cur_usr, file, indent=4)
 
 
 def get_current_user_info() -> tuple:
