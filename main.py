@@ -39,13 +39,13 @@ class Ui_MainWindow(object):
         self.shadow.setBlurRadius(10)
         self.shadow.setOffset(3, 3)
         self.shadow.setColor(QColor(0, 0, 0, 50))
-
+        self.USER, self.HOME = collect.get_current_user_info()
 
         with open("database/app_info.json", "r") as file:
             app_info = json.load(file)
-        with open("database/startup_onned.json", "r") as file:
+        with open(f"database/{self.USER}-startup_onned.json", "r") as file:
             startup_apps = json.load(file)
-        with open("database/added_sh.json", 'r') as file:
+        with open(f"database/{self.USER}-added_sh.json", 'r') as file:
             script_files = json.load(file)
         self.script_files = script_files
 
@@ -55,7 +55,7 @@ class Ui_MainWindow(object):
         self.script_card[0]['frame'].setProperty("framecontainer", True)
         self.script_card[0]['frame'].setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         self.script_card[0]['frame'].setFixedHeight(100)  # Set fixed height
-        self.script_card[0]['frame'].setMaximumWidth(800)
+        self.script_card[0]['frame'].setMaximumWidth(1000)
         self.script_card[0]['frame'].setFrameShape(QFrame.StyledPanel)
         self.script_card[0]['fileDialog'] = FolderBrowser()
 
@@ -78,7 +78,8 @@ class Ui_MainWindow(object):
         self.app_cards = {}
         added_item = self.add_Sartup_apps_first(startup_apps, app_info)
 
-        for i in app_info:
+        for i in range(len(app_info)):
+            i = str(i)
             if "icon_path" not in app_info[i]:
                 continue
             if i in added_item:
@@ -88,7 +89,7 @@ class Ui_MainWindow(object):
             self.app_cards[i]['frame'].setProperty("framecontainer", True)
             self.app_cards[i]['frame'].setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
             self.app_cards[i]['frame'].setFixedHeight(100)  # Set fixed height
-            self.app_cards[i]['frame'].setMaximumWidth(800)
+            self.app_cards[i]['frame'].setMaximumWidth(1000)
             self.app_cards[i]['frame'].setFrameShape(QFrame.StyledPanel)
 
             self.app_cards[i]['toggleButton'] = animeToggleButton(id=i)
@@ -134,14 +135,15 @@ class Ui_MainWindow(object):
 
     def add_Sartup_apps_first(self, startup_apps, app_info):
         already_added_items = []
-        for i in app_info:
+        for i in range(len(app_info)):
+            i = str(i)
             if app_info[i]["file_name"] in startup_apps and startup_apps[app_info[i]["file_name"]]==True:
                 self.app_cards[i] = {}
                 self.app_cards[i]['frame'] = QFrame()
                 self.app_cards[i]['frame'].setProperty("framecontainer", True)
                 self.app_cards[i]['frame'].setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
                 self.app_cards[i]['frame'].setFixedHeight(100)  # Set fixed height
-                self.app_cards[i]['frame'].setMaximumWidth(800)
+                self.app_cards[i]['frame'].setMaximumWidth(1000)
                 self.app_cards[i]['frame'].setFrameShape(QFrame.StyledPanel)
 
                 self.app_cards[i]['toggleButton'] = animeToggleButton(id=i)
@@ -185,7 +187,6 @@ class Ui_MainWindow(object):
             if i>great:
                 great = i
         i = great + 1
-        print(f"script card i={i}")
         for filename in self.script_files:
             self.script_card[i] = {}
             self.script_card[i]["filename"] = filename
@@ -194,7 +195,6 @@ class Ui_MainWindow(object):
             i+=1
     
     def Delete_card(self, index, filename=""):
-        print("what's up nigga")
         if filename:
             action.startup_delete_sh(filename)
         else:
@@ -204,15 +204,12 @@ class Ui_MainWindow(object):
         del self.script_files[self.script_card[index]["filename"]] 
 
     def insert_sh_frame(self):
-        
-        print("file changed detected !!")
         great = -1
         for i in self.script_card:
             if i>great:
                 great = i
         i = great + 1
-        print(f"script card i={i}")
-        with open("database/added_sh.json", 'r') as file:
+        with open(f"database/{self.USER}-added_sh.json", 'r') as file:
             new_entry = json.load(file)
         for f in new_entry:
             if f not in self.script_files:
@@ -227,7 +224,7 @@ class Ui_MainWindow(object):
         self.script_card[i]['frame'].setProperty("framecontainer", True)
         self.script_card[i]['frame'].setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         self.script_card[i]['frame'].setFixedHeight(100)  # Set fixed height
-        self.script_card[i]['frame'].setMaximumWidth(800)
+        self.script_card[i]['frame'].setMaximumWidth(1000)
         self.script_card[i]['frame'].setFrameShape(QFrame.StyledPanel)
         self.script_card[i]['toggleButton'] = animeToggleButton(id=i, sh=True, filename=self.script_card[i]["filename"])
         self.script_card[i]['toggleButton'].setProperty("toggleButt", True)
@@ -266,7 +263,8 @@ class Ui_MainWindow(object):
 
 
 if __name__ == "__main__":
-    # collect.Collect_app_info()
+    collect.load_current_user_info()
+    collect.Collect_app_info()
     app = QApplication(sys.argv)
     MainWindow = QMainWindow()
     MainWindow.setProperty("mainLinux", True)

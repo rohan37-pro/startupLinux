@@ -3,13 +3,13 @@ import subprocess
 import json
 import h5py
 import random
+from utils import collect
 
-HOME_DIR = os.path.expanduser("~/")
 
 
 def startup_on_off(id, act):
-    print(f"id={id}, act={act}")
-    if not os.path.exists(f"{HOME_DIR}.config/autostart"):
+    USER, HOME = collect.get_current_user_info()
+    if not os.path.exists(f"{HOME}.config/autostart"):
         subprocess.run("mkdir ~/.config/autostart", shell=True)
     with open("database/app_info.json", 'r') as file:
         apps = json.load(file)
@@ -23,29 +23,31 @@ def startup_on_off(id, act):
 
 
 def startup_on(app):
+    USER, HOME = collect.get_current_user_info()
     file_name = app["file_name"]
-    with open(f"{HOME_DIR}.config/autostart/startup.{file_name}", 'w') as file:
+    with open(f"{HOME}.config/autostart/startup.{file_name}", 'w') as file:
         file.write("[Desktop Entry]\n")
         file.write(f"Name={app['Name']}\n")
         file.write(f"Type={app['Type']}\n")
         file.write(f"Exec={app['Exec']}\n")
         file.write(f"Terminal=false\n")
-    with open("database/startup_onned.json", 'r') as file:
+    with open(f"database/{USER}-startup_onned.json", 'r') as file:
         startup_apps = json.load(file)
     startup_apps[file_name]=True
-    with open("database/startup_onned.json", 'w') as file:
+    with open(f"database/{USER}-startup_onned.json", 'w') as file:
         json.dump(startup_apps, file, indent=4)
 
 
 def startup_off(app):
+    USER, HOME = collect.get_current_user_info()
     file_name = app["file_name"]
-    if os.path.exists(f"{HOME_DIR}.config/autostart/startup.{file_name}"):
-        os.remove(f"{HOME_DIR}.config/autostart/startup.{file_name}")
+    if os.path.exists(f"{HOME}.config/autostart/startup.{file_name}"):
+        os.remove(f"{HOME}.config/autostart/startup.{file_name}")
 
-    with open("database/startup_onned.json", 'r') as file:
+    with open(f"database/{USER}-startup_onned.json", 'r') as file:
         startup_apps = json.load(file)
     startup_apps[file_name]=False
-    with open("database/startup_onned.json", 'w') as file:
+    with open(f"database/{USER}-startup_onned.json", 'w') as file:
         json.dump(startup_apps, file, indent=4)
 
 
@@ -54,9 +56,10 @@ def startup_off(app):
 
 
 def startup_on_off_sh(name, act):
-    if not os.path.exists(f"{HOME_DIR}.config/autostart"):
+    USER, HOME = collect.get_current_user_info()
+    if not os.path.exists(f"{HOME}.config/autostart"):
         subprocess.run("mkdir ~/.config/autostart", shell=True)
-    with open("database/added_sh.json", 'r') as file:
+    with open(f"database/{USER}-added_sh.json", 'r') as file:
         sh_files = json.load(file)
     if act==True:
         startup_on_for_sh(sh_files, name)
@@ -65,36 +68,39 @@ def startup_on_off_sh(name, act):
 
 
 def startup_on_for_sh(sh_files, name):
+    USER, HOME = collect.get_current_user_info()
     filename = name.replace('/', '_') + ".desktop"
     if os.path.exists(name):
         subprocess.run(f"chmod u+x {name}", shell=True)
-        with open(f"{HOME_DIR}.config/autostart/startup.{filename}", 'w') as file:
+        with open(f"{HOME}.config/autostart/startup.{filename}", 'w') as file:
             file.write("[Desktop Entry]\n")
             file.write(f"Name=Startup Sh file\n")
             file.write(f"Type=Application\n")
             file.write(f"Exec={name}\n")
             file.write(f"Terminal=true\n")
         sh_files[name]=True
-        with open("database/added_sh.json", 'w') as file:
+        with open(f"database/{USER}-added_sh.json", 'w') as file:
             json.dump(sh_files, file, indent=4)
 
 
 def startup_off_for_sh(shfiles, name):
+    USER, HOME = collect.get_current_user_info()
     file_name = name.replace('/', '_') + ".desktop"
-    if os.path.exists(f"{HOME_DIR}.config/autostart/startup.{file_name}"):
-        os.remove(f"{HOME_DIR}.config/autostart/startup.{file_name}")
+    if os.path.exists(f"{HOME}.config/autostart/startup.{file_name}"):
+        os.remove(f"{HOME}.config/autostart/startup.{file_name}")
     shfiles[name]=False
-    with open("database/added_sh.json", 'w') as file:
+    with open(f"database/{USER}-added_sh.json", 'w') as file:
         json.dump(shfiles, file, indent=4)
 
 def startup_delete_sh(name):
+    USER, HOME = collect.get_current_user_info()
     file_name = name.replace('/', '_') + ".desktop"
-    if os.path.exists(f"{HOME_DIR}.config/autostart/startup.{file_name}"):
-        os.remove(f"{HOME_DIR}.config/autostart/startup.{file_name}")
-    with open("database/added_sh.json", 'r') as file:
+    if os.path.exists(f"{HOME}.config/autostart/startup.{file_name}"):
+        os.remove(f"{HOME}.config/autostart/startup.{file_name}")
+    with open(f"database/{USER}-added_sh.json", 'r') as file:
         sh_files = json.load(file)
     del sh_files[name]
-    with open("database/added_sh.json", 'w') as file:
+    with open(f"database/{USER}-added_sh.json", 'w') as file:
         json.dump(sh_files, file, indent=4)
 
 

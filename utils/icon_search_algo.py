@@ -2,7 +2,7 @@ import os
 import subprocess
 
 def search(icon):
-    print(f"searching for {icon}")
+    # print(f"searching for {icon}")
     if (icon.endswith('.png') or icon.endswith('.svg') or icon.endswith('.xpm')) and icon.startswith('/'):
         return icon
     elif icon.endswith('.png') or icon.endswith('.svg') or icon.endswith('.xpm'):

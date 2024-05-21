@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QSizePolicy, QLabel, QHBoxLayout
 from PyQt5.QtCore import   QPoint, Qt, QRect, QSize
 from PyQt5.QtGui import QPainter, QColor, QIcon, QPixmap
 from utils import action
+from utils import collect
 import json, os
 
 
@@ -12,6 +13,7 @@ class FolderBrowser(QDialog):
         super().__init__(parent)
 
         self.setWindowTitle("Browse Folder")
+        self.USER, self.HOME = collect.get_current_user_info()
 
         self.button = QPushButton()
         self.button.setFixedHeight(70)
@@ -31,12 +33,12 @@ class FolderBrowser(QDialog):
         # options = QFileDialog.Options()
         file_filter = "Shell scripts (*.sh);;All files (*)"
         filename, _ = QFileDialog.getOpenFileName(self, "Select File", os.path.expanduser("~"), file_filter)
-        with open("database/added_sh.json", 'r') as file:
+        with open(f"database/{self.USER}-added_sh.json", 'r') as file:
             added_sh = json.load(file)
         if filename=="" or filename in added_sh:
             return
         added_sh[f"{filename}"] = False
-        with open("database/added_sh.json", 'w') as file:
+        with open(f"database/{self.USER}-added_sh.json", 'w') as file:
             added_sh = json.dump(added_sh, file, indent=4)
         
         action.chattr_needEmpty()
