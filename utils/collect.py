@@ -112,7 +112,6 @@ def Collect_app_info():
         sort_application(app_info)
         with open("database/app_info.json", 'w') as file:
             json.dump(app_info, file, indent=4)
-            print("sorted app written successfully")
 
 
 def sort_application(app):
@@ -155,7 +154,6 @@ def delete_application(app, key):
 def load_current_user_info():
     USER = subprocess.run("echo $USER", shell=True, stdout=subprocess.PIPE).stdout.decode().strip()
     HOME = subprocess.run("echo $HOME", shell=True, stdout=subprocess.PIPE).stdout.decode().strip()
-    print(F"user={USER}, HOME={HOME}")
     if HOME.endswith('/')==False:
         HOME += '/'
     cur_usr = {}
