@@ -9,6 +9,23 @@ QFrame[framecontainer="true"] {
     border-radius: 8px;
 }
 
+QFrame[searchbarframecontainer="true"] {
+    background-color: rgb(38, 38, 38);
+    border: 0px solid #000000;
+    border-radius: 8px;
+}
+
+QLineEdit[searchbar='true'] {
+    border: 2px solid rgb(191, 190, 190);
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+}
+
 QLabel[desktop_app_name=true]{
     color: rgb(255, 255, 255);
     background-color: rgb(55, 55, 55);

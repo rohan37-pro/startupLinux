@@ -1,10 +1,10 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QScrollArea, QFrame
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QScrollArea, QFrame, QLineEdit
 from PyQt5.QtWidgets import  QLabel, QSizePolicy, QGraphicsDropShadowEffect, QHBoxLayout, QPushButton
 from PyQt5.QtGui import QColor, QPixmap, QIcon
 from PyQt5.QtCore import   Qt, QSize, QFileSystemWatcher
 from utils import collect, action
-from utils.ui_componenet import FolderBrowser, animeToggleButton
+from utils.ui_componenet import FolderBrowser, animeToggleButton, IconLineEdit
 import json, os
 
 
@@ -22,6 +22,7 @@ class Ui_MainWindow(object):
         self.vboxlayout = QVBoxLayout(self.centralwidget)
         self.vboxlayout.setObjectName("vboxlayout") 
         self.frame_widgets = []
+        self.app_lables = []
         self.boxlayout = QVBoxLayout()
         self.boxlayout.setContentsMargins(10, 10, 10, 50)
         self.boxlayout.setAlignment(Qt.AlignHCenter)
@@ -48,6 +49,19 @@ class Ui_MainWindow(object):
         with open(f"database/{self.USER}-added_sh.json", 'r') as file:
             script_files = json.load(file)
         self.script_files = script_files
+
+    
+        # self.searchbar = IconLineEdit('database/icon/search-icon.svg', QSize(20, 20))
+        self.searchbar = QLineEdit()
+        self.searchbar.setPlaceholderText("Search")
+        self.searchbar.setProperty("searchbar",True)
+        self.searchbar.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        self.searchbar.setFixedHeight(90)  # Set fixed height
+        self.searchbar.setMaximumWidth(1000)
+        self.searchbar.textChanged.connect(self.display_frame_update)
+        self.boxlayout.addWidget(self.searchbar)
+
+
 
         self.script_card = {}
         self.script_card[0] = {}
@@ -110,6 +124,9 @@ class Ui_MainWindow(object):
                 self.app_cards[i]['label_2'] = QLabel(app_info[i]['Name'])
             self.app_cards[i]['label_2'].setProperty("desktop_app_name", True)
 
+            self.app_lables.append(self.app_cards[i]['label_2'].text())
+            self.frame_widgets.append(self.app_cards[i]['frame'])
+
             layout = QHBoxLayout(self.app_cards[i]['frame']) 
             layout.addWidget(self.app_cards[i]['label'])
             layout.addWidget(self.app_cards[i]['label_2'])
@@ -165,6 +182,9 @@ class Ui_MainWindow(object):
                 else:
                     self.app_cards[i]['label_2'] = QLabel(app_info[i]['Name'])
                 self.app_cards[i]['label_2'].setProperty("desktop_app_name", True)
+                
+                self.app_lables.append(self.app_cards[i]['label_2'].text())
+                self.frame_widgets.append(self.app_cards[i]['frame'])
 
                 layout = QHBoxLayout(self.app_cards[i]['frame']) 
                 layout.addWidget(self.app_cards[i]['label'])
@@ -199,6 +219,9 @@ class Ui_MainWindow(object):
             action.startup_delete_sh(filename)
         else:
             action.startup_delete_sh(self.script_card[index]["filename"])
+        ind = self.frame_widgets.index(self.script_card[index]['frame'])
+        self.frame_widgets.pop(ind)
+        self.app_lables.pop(ind)
         self.script_card[index]['frame'].deleteLater()
         self.boxlayout.removeWidget(self.script_card[index]['frame'])
         del self.script_files[self.script_card[index]["filename"]] 
@@ -216,7 +239,7 @@ class Ui_MainWindow(object):
                 self.script_card[i] = {}
                 self.script_card[i]["filename"] = f
                 self.script_card_layout_setup(i)
-                self.boxlayout.insertWidget(1, self.script_card[i]['frame'])
+                self.boxlayout.insertWidget(2, self.script_card[i]['frame'])
                 self.script_files[f] = False
 
     def script_card_layout_setup(self, i):
@@ -249,6 +272,9 @@ class Ui_MainWindow(object):
         self.script_card[i]['label_2'] = QLabel(self.script_card[i]["filename"])
         self.script_card[i]['label_2'].setProperty("desktop_app_name", True)
 
+        self.app_lables.append(self.script_card[i]['label_2'].text())
+        self.frame_widgets.append(self.script_card[i]['frame'])
+
         layout = QHBoxLayout(self.script_card[i]['frame']) 
         layout.addWidget(self.script_card[i]['label'])
         layout.addWidget(self.script_card[i]['label_2'])
@@ -260,7 +286,18 @@ class Ui_MainWindow(object):
         layout.addWidget(self.script_card[i]['DeleteButton'])
         layout.addWidget(self.script_card[i]['toggleButton'])
 
-
+    def display_frame_update(self):
+        text = self.searchbar.text().lower()
+        for i in range(len(self.app_lables)):
+            if text in self.app_lables[i]:
+                wiz = self.frame_widgets[i]
+                self.boxlayout.removeWidget(wiz)
+                self.boxlayout.insertWidget(2, wiz)
+                self.frame_widgets.remove(wiz)
+                self.frame_widgets.insert(0, wiz)
+                label = self.app_lables[i]
+                self.app_lables.remove(label)
+                self.app_lables.insert(0, label)
 
 if __name__ == "__main__":
     collect.load_current_user_info()

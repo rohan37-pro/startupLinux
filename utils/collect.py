@@ -119,6 +119,10 @@ def sort_application(app):
     if "0" in app or '1' in app or '2' in app:
         for i in range(len(app)):
             for j in range(i+1, len(app)):
+                if "Name" not in app[str(i)]:
+                    print(app[str(i)])
+                if "Name" not in app[str(j)]:
+                    print(app[str(j)])
                 if app[str(i)]['Name'].lower() > app[str(j)]['Name'].lower():
                     app[str(i)], app[str(j)] = app[str(j)], app[str(i)]
     elif 0 in app or 1 in app or 2 in app:

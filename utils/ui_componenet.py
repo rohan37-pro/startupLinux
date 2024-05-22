@@ -1,11 +1,36 @@
 from PyQt5.QtWidgets import QDialog, QPushButton, QVBoxLayout, QFileDialog, QCheckBox, QFrame
-from PyQt5.QtWidgets import QSizePolicy, QLabel, QHBoxLayout
+from PyQt5.QtWidgets import QSizePolicy, QLabel, QHBoxLayout, QLineEdit
 from PyQt5.QtCore import   QPoint, Qt, QRect, QSize
 from PyQt5.QtGui import QPainter, QColor, QIcon, QPixmap
 from utils import action
 from utils import collect
 import json, os
 
+
+class IconLineEdit(QLineEdit):
+    def __init__(self, icon_path, icon_size, parent=None):
+        super().__init__(parent)
+        self.icon_path = icon_path
+        self.icon_size = icon_size
+        self.setPlaceholderText("Search")  # Optional: Set placeholder text
+
+    def paintEvent(self, event):
+        super().paintEvent(event)
+
+        painter = QPainter(self)
+        pixmap = QPixmap(self.icon_path)
+        scaled_pixmap = pixmap.scaled(self.icon_size.width(), self.icon_size.height(), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+
+        # Calculate icon position
+        x = 20  # Padding from the left
+        y = (self.height() - self.icon_size.height()) // 2
+
+        painter.drawPixmap(x, y, scaled_pixmap)
+
+        # Add padding to the left of the text to make space for the icon
+        self.setTextMargins(self.icon_size.width() + 10, 0, 0, 0)
+
+        painter.end()
 
 
 class FolderBrowser(QDialog):
@@ -30,9 +55,11 @@ class FolderBrowser(QDialog):
         self.setLayout(self.layout)
 
     def browse_folder(self):
+        print("browse clicked..")
         # options = QFileDialog.Options()
         file_filter = "Shell scripts (*.sh);;All files (*)"
         filename, _ = QFileDialog.getOpenFileName(self, "Select File", os.path.expanduser("~"), file_filter)
+        print("cann't open folder")
         with open(f"database/{self.USER}-added_sh.json", 'r') as file:
             added_sh = json.load(file)
         if filename=="" or filename in added_sh:
