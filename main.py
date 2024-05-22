@@ -124,7 +124,7 @@ class Ui_MainWindow(object):
                 self.app_cards[i]['label_2'] = QLabel(app_info[i]['Name'])
             self.app_cards[i]['label_2'].setProperty("desktop_app_name", True)
 
-            self.app_lables.append(self.app_cards[i]['label_2'].text())
+            self.app_lables.append(self.app_cards[i]['label_2'].text().lower())
             self.frame_widgets.append(self.app_cards[i]['frame'])
 
             layout = QHBoxLayout(self.app_cards[i]['frame']) 
@@ -183,7 +183,7 @@ class Ui_MainWindow(object):
                     self.app_cards[i]['label_2'] = QLabel(app_info[i]['Name'])
                 self.app_cards[i]['label_2'].setProperty("desktop_app_name", True)
                 
-                self.app_lables.append(self.app_cards[i]['label_2'].text())
+                self.app_lables.append(self.app_cards[i]['label_2'].text().lower())
                 self.frame_widgets.append(self.app_cards[i]['frame'])
 
                 layout = QHBoxLayout(self.app_cards[i]['frame']) 
@@ -272,7 +272,7 @@ class Ui_MainWindow(object):
         self.script_card[i]['label_2'] = QLabel(self.script_card[i]["filename"])
         self.script_card[i]['label_2'].setProperty("desktop_app_name", True)
 
-        self.app_lables.append(self.script_card[i]['label_2'].text())
+        self.app_lables.append(self.script_card[i]['label_2'].text().lower())
         self.frame_widgets.append(self.script_card[i]['frame'])
 
         layout = QHBoxLayout(self.script_card[i]['frame']) 
@@ -286,18 +286,18 @@ class Ui_MainWindow(object):
         layout.addWidget(self.script_card[i]['DeleteButton'])
         layout.addWidget(self.script_card[i]['toggleButton'])
 
+
     def display_frame_update(self):
         text = self.searchbar.text().lower()
         for i in range(len(self.app_lables)):
             if text in self.app_lables[i]:
-                wiz = self.frame_widgets[i]
+                wiz = self.frame_widgets.pop(i)
                 self.boxlayout.removeWidget(wiz)
                 self.boxlayout.insertWidget(2, wiz)
-                self.frame_widgets.remove(wiz)
                 self.frame_widgets.insert(0, wiz)
-                label = self.app_lables[i]
-                self.app_lables.remove(label)
+                label = self.app_lables.pop(i)
                 self.app_lables.insert(0, label)
+
 
 if __name__ == "__main__":
     collect.load_current_user_info()

@@ -16,6 +16,9 @@ QFrame[searchbarframecontainer="true"] {
 }
 
 QLineEdit[searchbar='true'] {
+    /* background-image: image("database/icon/search-icon.png"); */
+    background-image: image-set("database/icon/search-icon.png");
+
     border: 2px solid rgb(191, 190, 190);
     border-radius: 20px;
     padding-left: 15px;
