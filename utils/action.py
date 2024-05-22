@@ -70,13 +70,25 @@ def startup_on_off_sh(name, act):
 def startup_on_for_sh(sh_files, name):
     USER, HOME = collect.get_current_user_info()
     filename = name.replace('/', '_') + ".desktop"
+    terminals = subprocess.run("ls /usr/bin/ | grep terminal", shell=True, stdout=subprocess.PIPE).stdout.decode().strip().split("\n")
+    term_found = ["", ""]
+    for t in terminals:
+        if "gnome-terminal" == t:
+            term_found[0] = "gnome-terminal"
+        if "qterminal" == t:
+            term_found[1] = "qterminal"
+    for i in term_found:
+        if i != "":
+            terminal = i
+            break
+    print(term_found)
     if os.path.exists(name):
-        subprocess.run(f"chmod u+x {name}", shell=True)
+        subprocess.run(f"chmod +x {name}", shell=True)
         with open(f"{HOME}.config/autostart/startup.{filename}", 'w') as file:
             file.write("[Desktop Entry]\n")
             file.write(f"Name=Startup Sh file\n")
             file.write(f"Type=Application\n")
-            file.write(f"Exec={name}\n")
+            file.write(f"Exec={terminal} -- {name}\n")
             file.write(f"Terminal=true\n")
         sh_files[name]=True
         with open(f"database/{USER}-added_sh.json", 'w') as file:
