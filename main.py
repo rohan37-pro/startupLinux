@@ -54,6 +54,7 @@ class Ui_MainWindow(object):
         # self.searchbar = IconLineEdit('database/icon/search-icon.svg', QSize(20, 20))
         self.searchbar = QLineEdit()
         self.searchbar.setPlaceholderText("Search")
+        # self.searchbar.addAction(QIcon("database/icon/search-icon.svg"), QLineEdit.LeadingPosition)
         self.searchbar.setProperty("searchbar",True)
         self.searchbar.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         self.searchbar.setFixedHeight(90)  # Set fixed height
@@ -298,6 +299,8 @@ class Ui_MainWindow(object):
                 label = self.app_lables.pop(i)
                 self.app_lables.insert(0, label)
 
+    def doNothing(self):
+        pass
 
 if __name__ == "__main__":
     collect.load_current_user_info()

@@ -55,11 +55,9 @@ class FolderBrowser(QDialog):
         self.setLayout(self.layout)
 
     def browse_folder(self):
-        print("browse clicked..")
         # options = QFileDialog.Options()
         file_filter = "Shell scripts (*.sh);;All files (*)"
         filename, _ = QFileDialog.getOpenFileName(self, "Select File", os.path.expanduser("~"), file_filter)
-        print("cann't open folder")
         with open(f"database/{self.USER}-added_sh.json", 'r') as file:
             added_sh = json.load(file)
         if filename=="" or filename in added_sh:
