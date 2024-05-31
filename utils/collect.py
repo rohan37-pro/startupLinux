@@ -15,7 +15,7 @@ def Collect_app_info():
         key = 0
         for apps in tqdm(desktops):
             if apps.endswith(".desktop")==False:
-                print("unknown formate --> ",apps)
+                # print("unknown formate --> ",apps)
                 continue
             applications[key] = {}
             desktop_file_name = apps
