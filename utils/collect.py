@@ -3,6 +3,7 @@ import subprocess
 import json
 import hashlib
 from utils import icon_search_algo
+from tqdm import tqdm
 
 def Collect_app_info():
     USER, HOME = get_current_user_info()
@@ -12,7 +13,7 @@ def Collect_app_info():
         desktops = os.listdir("/usr/share/applications/")
         applications = {}
         key = 0
-        for apps in desktops:
+        for apps in tqdm(desktops):
             if apps.endswith(".desktop")==False:
                 print("unknown formate --> ",apps)
                 continue

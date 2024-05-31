@@ -97,6 +97,8 @@ class Ui_MainWindow(object):
             i = str(i)
             if "icon_path" not in app_info[i]:
                 continue
+            if "NoDisplay" in app_info[i] and app_info[i]['NoDisplay']=='true':
+                continue
             if i in added_item:
                 continue
             self.app_cards[i] = {}
@@ -307,6 +309,7 @@ if __name__ == "__main__":
     collect.Collect_app_info()
     app = QApplication(sys.argv)
     MainWindow = QMainWindow()
+    MainWindow.setWindowTitle("Linux startupApp Manager")
     MainWindow.setProperty("mainLinux", True)
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
